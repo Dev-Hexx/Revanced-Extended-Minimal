@@ -171,6 +171,6 @@ if [ "$KSU" ] && [ -d "/data/adb/modules/zygisk-assistant" ]; then
 	ui_print "  give root permissions to $PKG_NAME"
 fi
 
-ui_print ""
+ui_print " "
 ui_print "* By Dev-Hexx (github.com/Dev-Hexx)"
 ui_print "* Enjoy"
