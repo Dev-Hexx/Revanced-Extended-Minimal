@@ -3,7 +3,7 @@
 # Revanced Extended Minimal
 [![CI](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/actions/workflows/ci.yml)
 
-Get the [latest CI release](https://github.com/Dev-Hexx/Revanced-Extended-Minl/releases/latest).
+Get the [latest CI release](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/releases/latest).
 
 ## Features
  * Updated with the latest versions of patches.
@@ -26,5 +26,3 @@ Get the [latest CI release](https://github.com/Dev-Hexx/Revanced-Extended-Minl/r
 [ReVanced Team](https://github.com/revanced) for [MicroG](https://github.com/ReVanced/GmsCore/releases).
 
 [inotia00](https://github.com/inotia00) for [revanced-extended patches](https://github.com/inotia00/revanced-patches).
-
-[Gnad Gnaoh](https://github.com/gnadgnaoh) for helping me figure some stuff out.
