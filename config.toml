@@ -7,17 +7,6 @@ parallel-jobs = 1
 # you can use rvmm-config-gen to generate a config
 
 # dont build on gh actions (https://github.com/j-hc/revanced-magisk-module/issues/554)
-[Music-Extended]
-enabled = true
-app-name = "Music"
-patches-source = "inotia00/revanced-patches"
-cli-source = "inotia00/revanced-cli"
-rv-brand = "Revanced Extended"
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-# archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
-
 [YouTube-Extended]
 enabled = true
 app-name = "RVX"
@@ -26,6 +15,5 @@ patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
 rv-brand = "Revanced Extended"
 build-mode = "both"
-arch = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
