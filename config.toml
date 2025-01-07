@@ -1,5 +1,6 @@
 enable-magisk-update = true # set this to false if you do not want to receive updates for the module in magisk app
 parallel-jobs = 1
+rv-brand = "RV Extended Minimal"
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
 # see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
@@ -10,7 +11,7 @@ parallel-jobs = 1
 [Music-Extended]
 enabled = false
 app-name = "YT Music"
-patcher-args = "-e 'Custom branding name for YouTube Music' -OappNameNotification='YT Music' -OappNameLauncher='YT Music' -e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='custom_branding_icon'"
+patcher-args = "-e 'Custom branding name for YouTube Music' -OappNameNotification='YT Music' -OappNameLauncher='YT Music' -e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='custom_branding_icon' -e 'Settings for YouTube Music' -OsettingsLabel='Revanced Extended Premium'"
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
 version = "auto"
