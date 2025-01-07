@@ -8,7 +8,7 @@ parallel-jobs = 1
 
 # dont build on gh actions (https://github.com/j-hc/revanced-magisk-module/issues/554)
 [Music-Extended]
-patcher-args = "-e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='custom_branding_icon'"
+patcher-args = "-e 'Custom branding name for YouTube' -OappName='YouTube' -e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='custom_branding_icon'"
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
 rv-brand = "Rvncd Extended Minl"
@@ -19,7 +19,7 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
 
 [YouTube-Extended]
-patcher-args = "-e 'Custom branding icon for YouTube' -OappIcon='mmt' -e 'Visual preferences icons for YouTube' -OsettingsMenuIcon='custom_branding_icon' -OapplyToAll='true' -e 'Custom Shorts action buttons' -OiconType='outline' -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon'"
+patcher-args = "-e 'Custom branding name for YouTube Music' -OappName='YT Music' -e 'Custom branding icon for YouTube' -OappIcon='mmt' -e 'Visual preferences icons for YouTube' -OsettingsMenuIcon='custom_branding_icon' -OapplyToAll='true' -e 'Custom Shorts action buttons' -OiconType='outline' -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon'"
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
 rv-brand = "Rvncd Extended Minl"
