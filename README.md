@@ -1,9 +1,9 @@
-#### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google. There are many that uses my modules and impersonates ReVanced.
+#### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google.
 
-# ReVanced eXtended MNML
+# Revanced Extended Minimal
 [![CI](https://github.com/Dev-Hexx/Revanced-Extended-Minl/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/Dev-Hexx/Revanced-Extended-Minl/actions/workflows/ci.yml)
 
-Get the [latest CI release](https://github.com/NoName-exe/revanced-extended-mnml/releases/latest).
+Get the [latest CI release](https://github.com/Dev-Hexx/Revanced-Extended-Minl/releases/latest).
 
 ## Features
  * Updated with the latest versions of patches.
