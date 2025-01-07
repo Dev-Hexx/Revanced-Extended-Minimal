@@ -1,7 +1,7 @@
 #### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google.
 
 # Revanced Extended Minimal
-[![CI](https://github.com/Dev-Hexx/Revanced-Extended-Minl/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/Dev-Hexx/Revanced-Extended-Minl/actions/workflows/ci.yml)
+[![CI](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/actions/workflows/ci.yml)
 
 Get the [latest CI release](https://github.com/Dev-Hexx/Revanced-Extended-Minl/releases/latest).
 
