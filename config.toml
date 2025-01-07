@@ -14,6 +14,6 @@ patcher-args = "-e 'Custom branding icon for YouTube' -OappIcon='mmt' -e 'Visual
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
 rv-brand = "Revanced Extended"
-build-mode = "both"
+build-mode = "module"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
