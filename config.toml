@@ -1,6 +1,5 @@
 enable-magisk-update = true # set this to false if you do not want to receive updates for the module in magisk app
 parallel-jobs = 1
-rv-brand = "Rvncd Extended Minl"
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
 # see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
@@ -9,6 +8,7 @@ rv-brand = "Rvncd Extended Minl"
 
 # dont build on gh actions (https://github.com/j-hc/revanced-magisk-module/issues/554)
 [Music-Extended]
+enabled = false
 patcher-args = "-e 'Custom branding name for YouTube Music' -OappName='YT Music' -e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='custom_branding_icon'"
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
@@ -23,6 +23,7 @@ patcher-args = "-e 'Custom branding name for YouTube' -OappName='YouTube' -e 'Cu
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
 version = "auto"
-build-mode = "both"
+build-mode = "module"
+rv-brand = "Rvncd Extended Minl"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
