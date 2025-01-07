@@ -8,7 +8,7 @@ parallel-jobs = 1
 
 # dont build on gh actions (https://github.com/j-hc/revanced-magisk-module/issues/554)
 [Music-Extended]
-enabled = true
+enabled = false
 app-name = "Music"
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
@@ -23,7 +23,7 @@ app-name = "RVX"
 patcher-args = "-e 'Custom branding icon for YouTube' -OappIcon='mmt' -e 'Visual preferences icons for YouTube' -OsettingsMenuIcon='custom_branding_icon' -OapplyToAll='true' -e 'Custom Shorts action buttons' -OiconType='outline' -e 'Custom header for YouTube' -OcustomHeader='custom_branding_icon'"
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
-rv-brand = "Revanced Extended"
+rv-brand = "Extended"
 build-mode = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
