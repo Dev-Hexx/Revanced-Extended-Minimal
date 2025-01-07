@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MODULE_TEMPLATE_DIR="revanced-extended-magisk"
+MODULE_TEMPLATE_DIR="revanced-magisk"
 CWD=$(pwd)
 TEMP_DIR="temp"
 BIN_DIR="bin"
