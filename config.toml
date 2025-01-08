@@ -7,9 +7,7 @@ rv-brand = "RV Extended Minimal"
 
 # you can use rvmm-config-gen to generate a config
 
-# dont build on gh actions (https://github.com/j-hc/revanced-magisk-module/issues/554)
 [Music-Extended]
-enabled = false
 app-name = "YT Music"
 patcher-args = "-e 'Custom branding name for YouTube Music' -OappNameNotification='YT Music' -OappNameLauncher='YT Music' -e 'Custom branding icon for YouTube Music' -OappIcon='mmt' -e 'Custom header for YouTube Music' -OcustomHeader='custom_branding_icon' -e 'Visual preferences icons for YouTube Music' -OsettingsMenuIcon='custom_branding_icon' -e 'Settings for YouTube Music' -OsettingsLabel='Revanced Extended Premium'"
 patches-source = "inotia00/revanced-patches"
@@ -26,6 +24,6 @@ patcher-args = "-e 'Custom branding name for YouTube' -OappName='YouTube' -e 'Cu
 patches-source = "inotia00/revanced-patches"
 cli-source = "inotia00/revanced-cli"
 version = "auto"
-build-mode = "module"
+build-mode = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
