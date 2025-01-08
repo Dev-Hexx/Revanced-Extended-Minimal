@@ -3,6 +3,7 @@
 # Revanced Extended Minimal
 [![Telegram](https://img.shields.io/badge/Join-%232CA5E0?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&label=telegram&labelColor=black&color=blue)](https://t.me/rvx_extended)
 [![CI](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/actions/workflows/ci.yml)
+![Static Badge](https://img.shields.io/badge/Join-Join?style=social&logo=telegram&label=Telegram)
 
 Get the [latest CI release](https://github.com/Dev-Hexx/Revanced-Extended-Minimal/releases/latest).
 
