@@ -12,11 +12,17 @@ jobs:
       - name: Checkout downstream repository
         uses: actions/checkout@v3
 
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Sync with upstream
+        env:
+          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }} # Custom Token here
         run: |
           git remote add upstream https://github.com/j-hc/revanced-magisk-module.git
           git fetch upstream main
-          git merge upstream/main
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+          git checkout main
+          git rebase upstream/main
+          git push origin main --force-with-lease
