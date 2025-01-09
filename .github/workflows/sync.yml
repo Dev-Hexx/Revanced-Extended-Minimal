@@ -8,20 +8,20 @@ on:
 env:
   UPSTREAM_REPO: j-hc/revanced-magisk-module
   UPSTREAM_BRANCH: main
-  FORK_BRANCH: main
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Fork Repository
         uses: actions/checkout@v3
 
-      - name: Sync with Upstream
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          repository: ${{ env.UPSTREAM_REPO }}
-          branch: ${{ env.UPSTREAM_BRANCH }}
-          target_branch: ${{ env.FORK_BRANCH }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add Upstream and Sync
+        run: |
+          git remote add upstream https://github.com/${{ env.UPSTREAM_REPO }}
+          git fetch upstream ${{ env.UPSTREAM_BRANCH }}
+          git merge upstream/${{ env.UPSTREAM_BRANCH }} --no-edit
+          git push origin ${{ env.UPSTREAM_BRANCH }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
