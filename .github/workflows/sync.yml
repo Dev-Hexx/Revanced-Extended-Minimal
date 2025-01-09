@@ -2,34 +2,21 @@ name: Sync Upstream
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
-  workflow_dispatch:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Set up Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Checkout downstream repository
+        uses: actions/checkout@v3
 
       - name: Sync with upstream
-        uses: repo-sync/github-sync@v3
-        with:
-          source_repo: ${{ secrets.UPSTREAM_REPO }}
-          source_branch: main
-          destination_branch: main
-          github_token: ${{ secrets.WORKFLOW_TOKEN }}
-
-      - name: Push changes
         run: |
+          git remote add upstream https://github.com/j-hc/revanced-magisk-module.git
+          git fetch upstream main
+          git merge upstream/main
           git push origin main
         env:
-          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
