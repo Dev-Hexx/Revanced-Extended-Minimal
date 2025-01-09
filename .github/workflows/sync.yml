@@ -7,18 +7,21 @@ on:
 
 env:
   UPSTREAM_REPO: j-hc/revanced-magisk-module
-  BRANCH: main
+  UPSTREAM_BRANCH: main
+  FORK_BRANCH: main
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-      - uses: repo-sync/pull-request@v2
+      - name: Sync with Upstream
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          source_repo: ${{ env.UPSTREAM_REPO }}
-          source_branch: ${{ env.BRANCH }}
-          destination_branch: ${{ env.BRANCH }}
+          repository: ${{ env.UPSTREAM_REPO }}
+          branch: ${{ env.UPSTREAM_BRANCH }}
+          target_branch: ${{ env.FORK_BRANCH }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
