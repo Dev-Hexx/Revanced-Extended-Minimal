@@ -15,9 +15,12 @@ jobs:
           fetch-depth: 0
 
       - name: Sync with upstream
-        uses: repo-sync/github-sync@v3
+        uses: wei/git-sync@v1
         env:
           SOURCE_REPO: ${{ secrets.UPSTREAM_REPO }}
-          SOURCE_BRANCH: main
-          DESTINATION_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+        with:
+          source_repo: ${{ secrets.UPSTREAM_REPO }}
+          source_branch: main
+          destination_branch: main
+          github_token: ${{ secrets.WORKFLOW_TOKEN }}
