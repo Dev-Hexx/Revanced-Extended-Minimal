@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 
 env:
-  UPSTREAM_REPO: j-hc/revanced-magisk-module
-  UPSTREAM_BRANCH: main
+  UPSTREAM_REPO: j-hc/revanced-magisk-module  # Upstream repository
+  UPSTREAM_BRANCH: main                       # Upstream branch
+  FORK_BRANCH: develop                        # Forked repository branch
 
 jobs:
   sync:
@@ -21,7 +22,8 @@ jobs:
         run: |
           git remote add upstream https://github.com/${{ env.UPSTREAM_REPO }}
           git fetch upstream ${{ env.UPSTREAM_BRANCH }}
-          git merge upstream/${{ env.UPSTREAM_BRANCH }} --no-edit
-          git push origin ${{ env.UPSTREAM_BRANCH }}
+          git checkout ${{ env.FORK_BRANCH }}
+          git merge upstream/${{ env.UPSTREAM_BRANCH }} --allow-unrelated-histories --no-edit
+          git push origin ${{ env.FORK_BRANCH }}
         env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
