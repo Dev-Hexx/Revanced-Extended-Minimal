@@ -1,29 +1,23 @@
-name: Sync with Upstream
+name: Sync Upstream
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *' # Runs daily at midnight
   workflow_dispatch:
-
-env:
-  UPSTREAM_REPO: j-hc/revanced-magisk-module  # Upstream repository
-  UPSTREAM_BRANCH: main                       # Upstream branch
-  FORK_BRANCH: main                        # Forked repository branch
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Fork Repository
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-      - name: Add Upstream and Sync
-        run: |
-          git remote add upstream https://github.com/${{ env.UPSTREAM_REPO }}
-          git fetch upstream ${{ env.UPSTREAM_BRANCH }}
-          git checkout ${{ env.FORK_BRANCH }}
-          git merge upstream/${{ env.UPSTREAM_BRANCH }}
-          git push origin ${{ env.FORK_BRANCH }}
+      - name: Sync with upstream
+        uses: repo-sync/github-sync@v3
         env:
-          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+          SOURCE_REPO: ${{ secrets.UPSTREAM_REPO }}
+          SOURCE_BRANCH: main
+          DESTINATION_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
