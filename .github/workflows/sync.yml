@@ -8,19 +8,28 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
       - name: Sync with upstream
-        uses: wei/git-sync@v1
-        env:
-          SOURCE_REPO: ${{ secrets.UPSTREAM_REPO }}
-          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+        uses: repo-sync/github-sync@v3
         with:
           source_repo: ${{ secrets.UPSTREAM_REPO }}
           source_branch: main
           destination_branch: main
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
+
+      - name: Push changes
+        run: |
+          git push origin main
+        env:
+          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
