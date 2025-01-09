@@ -23,7 +23,7 @@ jobs:
           git remote add upstream https://github.com/${{ env.UPSTREAM_REPO }}
           git fetch upstream ${{ env.UPSTREAM_BRANCH }}
           git checkout ${{ env.FORK_BRANCH }}
-          git merge upstream/${{ env.UPSTREAM_BRANCH }} --allow-unrelated-histories --no-edit
+          git merge upstream/${{ env.UPSTREAM_BRANCH }}
           git push origin ${{ env.FORK_BRANCH }}
         env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
