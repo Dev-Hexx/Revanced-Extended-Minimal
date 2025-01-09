@@ -8,7 +8,7 @@ on:
 env:
   UPSTREAM_REPO: j-hc/revanced-magisk-module  # Upstream repository
   UPSTREAM_BRANCH: main                       # Upstream branch
-  FORK_BRANCH: develop                        # Forked repository branch
+  FORK_BRANCH: main                        # Forked repository branch
 
 jobs:
   sync:
