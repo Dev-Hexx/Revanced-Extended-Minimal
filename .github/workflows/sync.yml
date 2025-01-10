@@ -1,8 +1,8 @@
-name: Sync Upstream Code
+name: Sync with Upstream
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Daily at midnight
+    - cron: "0 0 * * *"  # Har din raat 12 baje chalega
   workflow_dispatch:
 
 jobs:
@@ -10,20 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout Repository
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-          fetch-depth: 0  # Fetch full history to ensure proper sync
-
-      # Step 2: Sync with Upstream using repo-sync/repo-sync
       - name: Sync with Upstream
         uses: wei/git-sync@v2
         with:
-          source_repo: https://github.com/j-hc/revanced-magisk-module  # Upstream repo URL
-          source_branch: main                                         # Upstream branch
-          destination_branch: main                                    # Branch in your fork
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          upstream_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
-          debug: true                                                 # Show detailed logs
+          source_repo: j-hc/revanced-magisk-module          # Upstream repository ka naam
+          source_branch: main                               # Upstream branch
+          destination_repo: ${{ github.repository }}        # Aapki forked repository
+          destination_branch: main                          # Aapki fork repository ki branch (e.g., main)
