@@ -17,7 +17,7 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name 'GitHub Action'
+          git config --global user.name 'Dev-Hexx'
           git config --global user.email 'action@github.com'
 
       - name: Fetch upstream repository
