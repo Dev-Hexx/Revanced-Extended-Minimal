@@ -9,4 +9,6 @@ jobs:
     steps:
       - name: Debug PAT Token
         run: |
-          echo "PAT Token starts with: ${secrets.PAT_TOKEN:0:4}***"
+          python -c "import os; print(f'PAT Token starts with: {os.environ[\"PAT_TOKEN\"][:4]}***')"
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
