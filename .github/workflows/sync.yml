@@ -1,16 +1,14 @@
-name: Sync with Upstream
+name: Upstream Sync
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Manual trigger ke liye
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync repository
-        uses: tibdex/github-repo-sync@v2
+      - name: Pull upstream changes
+        uses: wei/pull@v1
         with:
-          source_repo: j-hc/revanced-magisk-module
-          source_branch: main
-          destination_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream: j-hc/revanced-magisk-module
+          token: ${{ secrets.GITHUB_TOKEN }}
