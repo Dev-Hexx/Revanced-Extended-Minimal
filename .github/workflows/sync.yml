@@ -32,6 +32,6 @@ jobs:
 
       - name: Push changes to target branch
         env:
-          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}  # Use the PAT token here
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  # Use the PAT token here
         run: |
-          git push https://${{ secrets.WORKFLOW_TOKEN }}@github.com/Dev-Hexx/Revanced-Extended-Minimal.git ${{ env.TARGET_BRANCH }}
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/Dev-Hexx/Revanced-Extended-Minimal.git ${{ env.TARGET_BRANCH }}
