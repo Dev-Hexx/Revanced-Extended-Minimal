@@ -2,7 +2,7 @@ name: Sync Upstream Code
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"  # Daily at midnight
   workflow_dispatch:
 
 jobs:
@@ -10,16 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           persist-credentials: false
+          fetch-depth: 0  # Fetch full history to ensure proper sync
 
+      # Step 2: Sync with Upstream using repo-sync/repo-sync
       - name: Sync with Upstream
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        uses: repo-sync/repo-sync@v2.6
         with:
-          target_sync_branch: main
-          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
-          upstream_sync_repo: j-hc/revanced-magisk-module
-          upstream_sync_branch: main
-          upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
+          source_repo: https://github.com/j-hc/revanced-magisk-module  # Upstream repo URL
+          source_branch: main                                         # Upstream branch
+          destination_branch: main                                    # Branch in your fork
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
+          debug: true                                                 # Show detailed logs
