@@ -6,16 +6,30 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      UPSTREAM_REPO: 'j-hc/revanced-magisk-module'
+      TARGET_BRANCH: 'main'
     steps:
       - name: Checkout target repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Ensure full clone
 
-      - name: Sync with upstream
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
-        with:
-          target_sync_branch: main
-          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
-          upstream_sync_repo: j-hc/revanced-magisk-module
-          upstream_sync_branch: main
+      - name: Set up Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+      - name: Fetch upstream repository
+        run: |
+          git remote add upstream https://github.com/${{ env.UPSTREAM_REPO }}.git
+          git fetch upstream
+
+      - name: Merge upstream changes
+        run: |
+          git checkout ${{ env.TARGET_BRANCH }}
+          git merge upstream/${{ env.TARGET_BRANCH }}
+
+      - name: Push changes to target branch
+        run: |
+          git push origin ${{ env.TARGET_BRANCH }}
