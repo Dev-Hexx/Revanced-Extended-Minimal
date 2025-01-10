@@ -19,7 +19,7 @@ jobs:
 
       # Step 2: Sync with Upstream using repo-sync/repo-sync
       - name: Sync with Upstream
-        uses: repo-sync/repo-sync@v2.6
+        uses: tj-actions/sync@v10
         with:
           source_repo: https://github.com/j-hc/revanced-magisk-module  # Upstream repo URL
           source_branch: main                                         # Upstream branch
