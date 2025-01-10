@@ -1,3 +1,12 @@
-- name: Debug PAT Token
+name: Verify PAT Token
+
+on:
+  workflow_dispatch: # Manual trigger के लिए
+
+jobs:
+  verify-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug PAT Token
         run: |
-          echo "PAT Token: ${{ secrets.PAT_TOKEN }}"
+          echo "PAT Token starts with: ${secrets.PAT_TOKEN:0:4}***"
