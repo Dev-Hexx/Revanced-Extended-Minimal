@@ -1,0 +1,22 @@
+name: Sync Upstream Code
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Sync with Upstream
+        uses: repo-sync/github-sync@v3
+        with:
+          source_repo: owner/upstream-repo
+          source_branch: main
+          destination_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
