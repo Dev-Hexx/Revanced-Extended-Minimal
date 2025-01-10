@@ -16,7 +16,7 @@ jobs:
       - name: Sync with Upstream
         uses: repo-sync/github-sync@v3
         with:
-          source_repo: owner/upstream-repo
+          source_repo: j-hc/revanced-magisk-module
           source_branch: main
           destination_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.WORKFLOW_TOKEN }}
