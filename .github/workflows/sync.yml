@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync with Upstream
-        uses: repo-sync/github-sync@v3
+        uses: XueMoMo/Sync-Fork-action@v1.0.6
         with:
           source_repo: "j-hc/revanced-magisk-module"
           source_branch: "main"
