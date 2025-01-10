@@ -14,6 +14,5 @@ jobs:
         uses: wei/git-sync@v2
         with:
           source_repo: j-hc/revanced-magisk-module          # Upstream repository ka naam
-          source_branch: main                               # Upstream branch
-          destination_repo: ${{ github.repository }}        # Aapki forked repository
+          source_branch: main                               # Upstream branch        # Aapki forked repository
           destination_branch: main                          # Aapki fork repository ki branch (e.g., main)
