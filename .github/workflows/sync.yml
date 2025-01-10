@@ -1,7 +1,7 @@
-name: Sync Fork
+name: Upstream Sync
 
 on:
-  workflow_dispatch: # Manual trigger ke liye
+  workflow_dispatch:
 
 jobs:
   sync:
@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: Checkout target repository
         uses: actions/checkout@v3
+
+      - name: Add upstream repository
+        run: |
+          git remote add upstream https://github.com/j-hc/revanced-magisk-module.git
+          git fetch upstream
 
       - name: Sync with upstream
         uses: XueMoMo/Sync-Fork-action@v1.0.6
