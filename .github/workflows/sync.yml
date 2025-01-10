@@ -1,7 +1,7 @@
 name: Upstream Sync
 
 on:
-  workflow_dispatch: # Manual trigger ke liye
+  workflow_dispatch: # Manual trigger के लिए
 
 jobs:
   sync:
@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout target repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure full clone
 
       - name: Sync with upstream
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
