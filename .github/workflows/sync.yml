@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Sync with upstream repository
-        uses: DevMatrixs/upstream-sync-action@v1.0.1
+        uses: DevMatrixs/upstream-sync-action@v1.0.0
         with:
           GIT_NAME: 'GitHub Actions'
           GIT_EMAIL: 'actions@github.com'
