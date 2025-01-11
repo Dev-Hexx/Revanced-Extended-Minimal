@@ -2,15 +2,14 @@ name: Sync with Upstream
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '30 4 * * *'
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v2
-
       - name: Sync with upstream repository
         uses: DevMatrixs/upstream-sync-action@v1.0.1
         with:
