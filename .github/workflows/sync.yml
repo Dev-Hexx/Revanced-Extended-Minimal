@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Sync with upstream repository
-        uses: DevMatrixs/upstream-sync-action@v1.0.0
+        uses: DevMatrixs/upstream-sync-action@v1.0.1
         with:
           GIT_NAME: 'GitHub Actions'
           GIT_EMAIL: 'actions@github.com'
