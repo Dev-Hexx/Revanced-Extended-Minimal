@@ -13,7 +13,7 @@ jobs:
       UPSTREAM_URL: ${{ secrets.UPSTREAM_REPO_URL }}
       BR: ${{ secrets.BRANCH || 'main' }}
       TARGET: ${{ secrets.TARGET_BRANCH || 'main' }}
-      TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TOKEN: ${{ secrets.GITHPB_TOKEN }}
 
     steps:
       - name: Checkout
