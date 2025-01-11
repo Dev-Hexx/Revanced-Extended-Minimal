@@ -1,37 +1,28 @@
-name: Upstream Sync
+name: Sync Upstream & Downstream
 
 on:
-  workflow_dispatch: # Manual trigger के लिए
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     env:
-      UPSTREAM_REPO: 'j-hc/revanced-magisk-module'
-      TARGET_BRANCH: 'main'
+      UPSTREAM_URL: ${{ secrets.UPSTREAM_REPO_URL }}
+      BR: ${{ secrets.BRANCH || 'main' }}
+      TARGET: ${{ secrets.TARGET_BRANCH || 'main' }}
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
-      - name: Checkout target repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Sync & Update
+        uses: ./ 
         with:
-          fetch-depth: 0  # Ensure full clone
-
-      - name: Set up Git
-        run: |
-          git config --global user.name 'Dev-Hexx'
-          git config --global user.email 'action@github.com'
-
-      - name: Fetch upstream repository
-        run: |
-          git remote add upstream https://github.com/${{ env.UPSTREAM_REPO }}.git
-          git fetch upstream
-
-      - name: Merge upstream changes
-        run: |
-          git checkout ${{ env.TARGET_BRANCH }}
-          git merge upstream/${{ env.TARGET_BRANCH }}
-
-      - name: Push changes to target branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  # Use the PAT token here
-        run: |
-          git push https://${{ secrets.PAT_TOKEN }}@github.com/Dev-Hexx/Revanced-Extended-Minimal.git ${{ env.TARGET_BRANCH }}
+          upstream_repo_url: ${{ env.UPSTREAM_URL }}
+          branch: ${{ env.BR }}
+          target_branch: ${{ env.TARGET }}
+          token: ${{ env.TOKEN }}
