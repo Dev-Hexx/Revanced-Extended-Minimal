@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run Upstream Sync Action
-      uses: DevMatrixs/upstream-sync-action  # Assuming this action is in the root directory of your repo
+      uses: DevMatrixs/upstream-sync-action@v1.0.0  # Assuming this action is in the root directory of your repo
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         upstream_repo: 'j-hc/revanced-magisk-module'
