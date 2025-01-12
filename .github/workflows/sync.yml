@@ -1,23 +1,20 @@
-name: Sync with Upstream
+name: Upstream Sync and Push
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '30 4 * * *'
+  workflow_dispatch:  # This allows manual triggering from GitHub UI
 
 jobs:
-  sync:
+  sync_and_push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Sync with upstream repository
-        uses: DevMatrixs/upstream-sync-action@v1.0.0
-        with:
-          GIT_NAME: 'DevMatrixs'
-          GIT_EMAIL: 'DevMatrixs@github.com'
-          UPSTREAM_REPO: 'j-hc/revanced-magisk-module'
-          TARGET_BRANCH: 'main'
-          UPSTREAM_BRANCH: 'main'
-          FORCE_PUSH: 'false'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Upstream Sync Action
+      uses: DevMatrixs/upstream-sync-action  # Assuming this action is in the root directory of your repo
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        upstream_repo: 'j-hc/revanced-magisk-module'
+        source_branch: 'main'
+        target_branch: 'main'
