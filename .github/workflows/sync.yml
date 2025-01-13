@@ -1,20 +1,20 @@
-name: Upstream Sync and Push
+name: Sync Upstream
 
 on:
-  workflow_dispatch:  # This allows manual triggering from GitHub UI
+  workflow_dispatch:
 
 jobs:
-  sync_and_push:
+  sync:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Run Upstream Sync Action
-      uses: DevMatrixs/upstream-sync-action@v1.0.0  # Assuming this action is in the root directory of your repo
-      with:
-        github_token: ${{ secrets.MY_TOKEN }}
-        upstream_repo: 'j-hc/revanced-magisk-module'
-        source_branch: 'main'
-        target_branch: 'main'
+      - name: Sync upstream
+        uses: DevMatrixs/upstream-sync-action@v1.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream_repo: 'j-hc/revanced-magisk-module'
+          source_branch: 'main'
+          target_branch: 'main'
