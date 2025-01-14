@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run sync action
-        uses: ./  
+        uses: DevMatrixs/upstream-sync-action@v1.0.0
         with:
           WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
           upstream_repo: ${{ secrets.UPSTREAM_REPO }}
