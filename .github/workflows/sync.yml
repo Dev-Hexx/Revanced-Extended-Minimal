@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run Sync Upstream Action
-      uses: ./  # Use the current directory for the action
+      uses: DevMatrixss/upstream-sync@v1.1.0 # Use the current directory for the action
       with:
         upstream_repo: "j-hc/revanced-magisk-module"  # Replace with actual upstream repo
         upstream_branch: "main"              # Replace with actual branch
