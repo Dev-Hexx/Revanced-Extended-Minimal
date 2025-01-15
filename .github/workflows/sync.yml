@@ -1,9 +1,6 @@
 name: Sync Upstream to Downstream
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -18,7 +15,3 @@ jobs:
         upstream_branch: "main"
         downstream_branch: "main"
         custom_token: "${{ secrets.CUSTOM_TOKEN }}"
-        fetch_args: ""
-        merge_args: ""
-        push_args: ""
-        spawn_logs: "true"
