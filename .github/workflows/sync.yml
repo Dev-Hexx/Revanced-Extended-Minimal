@@ -7,6 +7,14 @@ jobs:
   sync:
     runs-on: ubuntu-latest
 
+    env:
+      # Defining environment variables that will be used across all steps
+      WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+      UPSTREAM_REPO: ${{ secrets.UPSTREAM_REPO }}
+      BRANCH_NAME: "main"
+      GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
+      GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -16,8 +24,8 @@ jobs:
       - name: Run sync action
         uses: DevMatrixs/upstream-sync-action@v1.0.0
         with:
-          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
-          upstream_repo: ${{ secrets.UPSTREAM_REPO }}
-          branch_name: "main"
-          git_user_email: ${{ secrets.GIT_USER_EMAIL }}
-          git_user_name: ${{ secrets.GIT_USER_NAME }}
+          WORKFLOW_TOKEN: ${{ env.WORKFLOW_TOKEN }}
+          upstream_repo: ${{ env.UPSTREAM_REPO }}
+          branch_name: ${{ env.BRANCH_NAME }}
+          git_user_email: ${{ env.GIT_USER_EMAIL }}
+          git_user_name: ${{ env.GIT_USER_NAME }}
