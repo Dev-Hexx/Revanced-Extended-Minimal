@@ -24,4 +24,4 @@ jobs:
         fetch_args: ""                  # Optional fetch arguments
         merge_args: ""                # Optional merge arguments
         push_args: ""                 # Optional push arguments
-        spawn_logs: "false"                   # Optional logs
+        spawn_logs: "true"                   # Optional logs
