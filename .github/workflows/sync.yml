@@ -14,7 +14,7 @@ jobs:
       - name: Sync with upstream
         uses: DevMatrixs/upstream-sync-action@v1.0.0
         with:
-          upstream-repo: 'upstream-user/upstream-repo'
+          upstream-repo: 'j-hc/revanced-magisk-module'
           branch: 'main'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           log-level: 'debug'
