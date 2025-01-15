@@ -16,4 +16,4 @@ jobs:
         upstream_repo: "j-hc/revanced-magisk-module"
         upstream_branch: "main"
         downstream_branch: "main"
-        custom_token: "${{ secrets.CUSTOM_TOKEN }}"
+        github_token: "${{ secrets.CUSTOM_TOKEN }}"
