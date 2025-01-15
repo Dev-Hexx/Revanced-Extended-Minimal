@@ -16,5 +16,5 @@ jobs:
         with:
           upstream-repo: 'j-hc/revanced-magisk-module'
           branch: 'main'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.WORKFLOW_TOKEN }}
           log-level: 'debug'
