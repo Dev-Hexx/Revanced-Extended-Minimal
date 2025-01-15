@@ -1,7 +1,7 @@
 name: Sync Fork with Upstream
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Only allows manual trigger
 
 jobs:
   sync:
@@ -10,14 +10,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
-      - name: Run sync action
+      - name: Sync with upstream
         uses: DevMatrixs/upstream-sync-action@v1.0.0
         with:
-          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
-          upstream_repo: ${{ secrets.UPSTREAM_REPO }}
-          branch_name: "main"
-          git_user_email: ${{ secrets.GIT_USER_EMAIL }}
-          git_user_name: ${{ secrets.GIT_USER_NAME }}
+          upstream-repo: 'j-hc/revanced-magisk-module'
+          branch: 'main'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          log-level: 'debug'
