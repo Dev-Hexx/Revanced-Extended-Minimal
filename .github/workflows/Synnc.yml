@@ -1,0 +1,26 @@
+name: Sync Fork with Upstream Repository
+
+env:
+  CUSTOM_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
+  UPSTREAM_REPO: https://github.com/j-hc/revanced-magisk-module.git
+  UPSTREAM_BRANCH: main
+  DOWNSTREAM_BRANCH: main
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync_fork:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Run Sync Fork with Upstream Repository Action
+      uses: DevMatrixss/Sync-Upstream@v0.0.1
+      with:
+        github_token: ${{ env.CUSTOM_TOKEN }}
+        upstream_repo: ${{ env.UPSTREAM_REPO }}
+        upstream_branch: ${{ env.UPSTREAM_BRANCH }}
+        downstream_branch: ${{ env.DOWNSTREAM_BRANCH }}
